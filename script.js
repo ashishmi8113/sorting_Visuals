@@ -56,6 +56,13 @@ function updateDetails(sortType) {
             wrostElement.textContent = 'O(n log n)';
             stableElement.textContent = 'No';
             break;
+         case 'quick':
+            nameElement.textContent = 'Quick Sort';
+            bestElement.textContent = 'O(n log n)';
+            averageElement.textContent = 'O(n log n)';
+            wrostElement.textContent = 'O(n^2)';
+            stableElement.textContent = 'No';
+            break;
         default:
             nameElement.textContent = '';
             bestElement.textContent = '';
@@ -88,6 +95,9 @@ function play() {
             break;
         case 'heap':
             swaps = heapSort(copy);
+            break;
+        case 'quick':
+            swaps = quickSort(copy);
             break;
         default:
             return; // No valid sort type selected

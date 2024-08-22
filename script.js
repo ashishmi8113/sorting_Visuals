@@ -308,21 +308,3 @@ function quickSort(arr) {
     sort(0, arr.length - 1);
     return swaps;
 }
-
-// Define bubbleSort, insertionSort, selectionSort, mergeSort, heapSort similarly
-// Example for bubbleSort
-function bubbleSort(arr) {
-    const swaps = [];
-    for (let i = 0; i < size; i++) {
-        for (let j = 0; j < size - i - 1; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swaps.push([j, j + 1]);
-                let temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
-        }
-    }
-    return swaps;
-}
-

@@ -271,3 +271,58 @@ function heapSort(arr) {
 
     return swaps;
 }
+
+
+
+// Quick Sort algorithm
+function quickSort(arr) {
+    const swaps = [];
+    
+    function partition(low, high) {
+        const pivot = arr[Math.floor((high + low) / 2)];
+        let i = low;
+        let j = high;
+
+        while (i <= j) {
+            while (arr[i] < pivot) i++;
+            while (arr[j] > pivot) j--;
+
+            if (i <= j) {
+                swaps.push([i, j]);
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+                i++;
+                j--;
+            }
+        }
+        return i;
+    }
+
+    function sort(low, high) {
+        if (low < high) {
+            const index = partition(low, high);
+            sort(low, index - 1);
+            sort(index, high);
+        }
+    }
+
+    sort(0, arr.length - 1);
+    return swaps;
+}
+
+// Define bubbleSort, insertionSort, selectionSort, mergeSort, heapSort similarly
+// Example for bubbleSort
+function bubbleSort(arr) {
+    const swaps = [];
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swaps.push([j, j + 1]);
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return swaps;
+}
+

@@ -56,7 +56,7 @@ function updateDetails(sortType) {
             wrostElement.textContent = 'O(n log n)';
             stableElement.textContent = 'No';
             break;
-         case 'quick':
+        case 'quick':
             nameElement.textContent = 'Quick Sort';
             bestElement.textContent = 'O(n log n)';
             averageElement.textContent = 'O(n log n)';
@@ -281,7 +281,6 @@ function heapSort(arr) {
 
     return swaps;
 }
-
 
 
 // Quick Sort algorithm

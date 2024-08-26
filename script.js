@@ -42,13 +42,6 @@ function updateDetails(sortType) {
             wrostElement.textContent = 'O(n^2)';
             stableElement.textContent = 'No';
             break;
-        case 'merge':
-            nameElement.textContent = 'Merge Sort';
-            bestElement.textContent = 'O(n log n)';
-            averageElement.textContent = 'O(n log n)';
-            wrostElement.textContent = 'O(n log n)';
-            stableElement.textContent = 'Yes';
-            break;
         case 'heap':
             nameElement.textContent = 'Heap Sort';
             bestElement.textContent = 'O(n log n)';
@@ -89,9 +82,6 @@ function play() {
             break;
         case 'selection':
             swaps = selectionSort(copy);
-            break;
-        case 'merge':
-            swaps = mergeSort(copy);
             break;
         case 'heap':
             swaps = heapSort(copy);
@@ -185,65 +175,6 @@ function selectionSort(arr) {
     return swaps;
 }
 
-// Merge Sort (Recursive)
-function merge(arr, left, mid, right) {
-    const swaps = [];
-    const n1 = mid - left + 1;
-    const n2 = right - mid;
-
-    const L = new Array(n1);
-    const R = new Array(n2);
-
-    for (let i = 0; i < n1; i++)
-        L[i] = arr[left + i];
-    for (let j = 0; j < n2; j++)
-        R[j] = arr[mid + 1 + j];
-
-    let i = 0, j = 0;
-    let k = left;
-
-    while (i < n1 && j < n2) {
-        if (L[i] <= R[j]) {
-            arr[k] = L[i];
-            swaps.push([k, arr.indexOf(L[i])]);
-            i++;
-        } else {
-            arr[k] = R[j];
-            swaps.push([k, arr.indexOf(R[j])]);
-            j++;
-        }
-        k++;
-    }
-
-    while (i < n1) {
-        arr[k] = L[i];
-        swaps.push([k, arr.indexOf(L[i])]);
-        i++;
-        k++;
-    }
-
-    while (j < n2) {
-        arr[k] = R[j];
-        swaps.push([k, arr.indexOf(R[j])]);
-        j++;
-        k++;
-    }
-
-    return swaps;
-}
-
-function mergeSort(arr, left = 0, right = arr.length - 1) {
-    let swaps = [];
-    if (left >= right)
-        return [];
-
-    const mid = Math.floor(left + (right - left) / 2);
-    swaps = swaps.concat(mergeSort(arr, left, mid));
-    swaps = swaps.concat(mergeSort(arr, mid + 1, right));
-    swaps = swaps.concat(merge(arr, left, mid, right));
-
-    return swaps;
-}
 
 // Heap Sort
 function heapSort(arr) {

@@ -184,9 +184,6 @@ function quickSort(arr) {
 // Initialize arrays and display the bars
 initArrays();
 function playAll() {
-    // Play the audio when sorting starts
-    const audio = document.getElementById('sortAudio');
-    audio.play();
 
     // Sorting algorithms
     const bubbleSwaps = bubbleSort([...arrBubble]);
@@ -201,15 +198,5 @@ function playAll() {
     animate(selectionSwaps, arrSelection, 'containerSelection');
     animate(heapSwaps, arrHeap, 'containerHeap');
     animate(quickSwaps, arrQuick, 'containerQuick');
-
-    // Stop the audio when the sorting is finished
-    setTimeout(() => {
-        audio.pause();
-        audio.currentTime = 0; // Reset the audio to the start
-    }, calculateTotalAnimationTime());
 }
 
-function calculateTotalAnimationTime() {
-    const totalSwaps = arrBubble.length + arrInsertion.length + arrSelection.length + arrHeap.length + arrQuick.length;
-    return totalSwaps * 30; // Assuming 20ms per swap
-}

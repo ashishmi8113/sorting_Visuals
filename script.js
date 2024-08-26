@@ -1,9 +1,6 @@
-   
-    
-const size = 55;
-let arr = [];
 
-// Initialize array with random values
+const size=55;
+let arr = [];
 const container = document.querySelector('#container');
 init();
 
@@ -13,6 +10,8 @@ function init() {
     }
     showbars();
 }
+
+
 function updateDetails(sortType) {
     const nameElement = document.getElementById('name');
     const bestElement = document.getElementById('best');
@@ -66,6 +65,10 @@ function updateDetails(sortType) {
     }
 }
 
+
+
+
+
 function play() {
     const sortType = document.getElementById('sortType').value;
     updateDetails(sortType);
@@ -95,21 +98,25 @@ function play() {
 
     animate(swaps);
 }
+
+
 function animate(swaps) {
     if (swaps.length === 0) {
-        showbars([], size); // Mark the entire array as sorted when finished
+        showbars([]); // Mark the entire array as sorted when finished
         return;
     }
     const [i, j] = swaps.shift();
     [arr[i], arr[j]] = [arr[j], arr[i]];
-    showbars([i, j], arr.length - swaps.length / (size - 1)); // Adjust sorted portion
+    showbars([i, j]); // Adjust sorted portion
     setTimeout(() => {
         animate(swaps);
     }, 20); // Increased delay for better visibility
 }
 
+
+
 // Function to display the array as bars
-function showbars(indices, sortedUpTo = 0) {
+function showbars(indices) {
     if (!container) {
         container = document.getElementById('container'); // Ensure container is initialized
     }
@@ -119,21 +126,24 @@ function showbars(indices, sortedUpTo = 0) {
         bar.style.height = arr[i] * 100 + "%";
         bar.style.width = "20px";
         bar.style.margin = "1px";
+        
         if (indices && indices.includes(i)) {
             bar.style.backgroundColor = "red"; // Highlight currently swapped elements
-
-        } else {
+        } 
+        else {
             bar.style.backgroundColor = "black"; // Unsorted part
         }
+
         container.appendChild(bar);
     }
 }
 
+
 // Bubble Sort
 function bubbleSort(arr) {
     const swaps = [];
-    for (let i = 0; i < size; i++) {
-        for (let j = 0; j < size - i - 1; j++) {
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length - i - 1; j++) {
             if (arr[j] > arr[j + 1]) {
                 swaps.push([j, j + 1]);
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];

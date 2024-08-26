@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+    <link rel="stylesheet" href="stylesP.css">
+</head>
+<body>
+    <h1>Sorting Visualizer</h1>
+    <audio id="sortAudio" src="bubble-sort-33294.mp3" type="audio/mp3"></audio>
+
+
+    <div class="initButton">
+        <!-- <span style="font-family: 'Courier New', Courier, monospace;">Enter The Total Number of Bars :- </span> -->
+        <input type="number" name="bars" id="size" style="border-radius: 15px; height: 30px; width: 300px;" placeholder="Enter The Total Number of Bars :- Ex: 50">
+        <span>--OR--</span>
+        <button onclick="initArrays()">New Initialsation</button>
+    </div>
+
+    <div id="sortingsContainer">
+        <!-- Sorting algorithms with visualizers -->
+        <!-- Row 1: First three sorting algorithms -->
+        <div class="row">
+            <div class="sort-box">
+                <h3>Bubble Sort</h3>
+                <div class="complexity">
+                    <span class="label">Best:O(n)</span> 
+                    <span class="label">Average:O(n^2)</span> 
+                    <span class="label">Worst: O(n^2)</span> 
+                </div>
+                <div class="container" id="containerBubble"></div>
+            </div>
+            <div class="sort-box">
+                <h3>Insertion Sort</h3>
+                <div class="complexity">
+                    <span class="label">Best:O(n)</span> 
+                    <span class="label">Average:O(n^2)</span> 
+                    <span class="label">Worst: O(n^2)</span> 
+                </div>
+                <div class="container" id="containerInsertion"></div>
+            </div>
+            <div class="sort-box">
+                <h3>Selection Sort</h3>
+                <div class="complexity">
+                    <span class="label">Best:O(n^2)</span> 
+                    <span class="label">Average:O(n^2)</span> 
+                    <span class="label">Worst: O(n^2)</span> 
+                </div>
+                <div class="container" id="containerSelection"></div>
+            </div>
+        </div>
+
+        <!-- Row 2: Last three sorting algorithms -->
+        <div class="row-2">
+            <div class="sort-box-2">
+                <h3>Heap Sort</h3>
+                <div class="complexity">
+                    <span class="label">Best:O(n log n)</span> 
+                    <span class="label">Average:O(n log n)</span> 
+                    <span class="label">Worst: O(n log n)</span> 
+                </div>
+                <div class="container" id="containerHeap"></div>
+            </div>
+            <div class="sort-box-2">
+                <h3>Quick Sort</h3>
+                <div class="complexity">
+                    <span class="label">Best:O(n log n)</span> 
+                    <span class="label">Average:O(n log n)</span> 
+                    <span class="label">Worst: O(n^2)</span> 
+                </div>
+                <div class="container" id="containerQuick"></div>
+            </div>
+        </div>
+    </div>
+
+    <button onclick="playAll()">Play All</button>
+
+    <!-- Complexity Comparison Table -->
+    <div id="comparisonTable">
+        <h2>Sorting Algorithm Complexity Comparison</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>Best Case</th>
+                    <th>Average Case</th>
+                    <th>Worst Case</th>
+                    <th>Speed (Fast/Slow)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bubble Sort</td>
+                    <td>O(n)</td>
+                    <td>O(n²)</td>
+                    <td>O(n²)</td>
+                    <td>Slow</td>
+                </tr>
+                <tr>
+                    <td>Insertion Sort</td>
+                    <td>O(n)</td>
+                    <td>O(n²)</td>
+                    <td>O(n²)</td>
+                    <td>Slow</td>
+                </tr>
+                <tr>
+                    <td>Selection Sort</td>
+                    <td>O(n²)</td>
+                    <td>O(n²)</td>
+                    <td>O(n²)</td>
+                    <td>Slow</td>
+                </tr>
+                <tr>
+                    <td>Merge Sort</td>
+                    <td>O(n log n)</td>
+                    <td>O(n log n)</td>
+                    <td>O(n log n)</td>
+                    <td>Fast</td>
+                </tr>
+                <tr>
+                    <td>Heap Sort</td>
+                    <td>O(n log n)</td>
+                    <td>O(n log n)</td>
+                    <td>O(n log n)</td>
+                    <td>Fast</td>
+                </tr>
+                <tr>
+                    <td>Quick Sort</td>
+                    <td>O(n log n)</td>
+                    <td>O(n log n)</td>
+                    <td>O(n²)</td>
+                    <td>Fast</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+    <script src="scriptP.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+/* General styling for the body and layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #1f2937;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+.initButton{
+    margin-bottom: 10px;
+}
+/* .init{
+    border-radius: 15px;
+    height: 30px;
+} */
+
+h1 {
+    background-color: red;
+    margin-bottom: 1px;
+    font-size: 2.5em;
+    color: #e5e7eb;
+    letter-spacing: 1px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+/* Container for sorting boxes */
+#sortingsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+.row-2 {
+    display: flex;
+    justify-content: space-around;
+    width: 75%;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.sort-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #374151;
+    padding: 5px;
+    border-radius: 10px;
+    color: #cbd5e1;
+    width: 350px;
+    height: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+.sort-box-2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #374151;
+    padding: 5px;
+    border-radius: 10px;
+    color: #cbd5e1;
+    width: 350px;
+    height: 200px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.sort-box:hover,.sort-box-2:hover {
+    transform: translateY(-5px);
+}
+
+/* Algorithm name styling */
+.sort-box h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #60a5fa;
+}
+.sort-box-2 h3 {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+    color: #60a5fa;
+}
+
+/* Styling for the complexity to display vertically */
+.complexity {
+    font-size: 1em;
+    height: 50px;
+    display: flex;
+    background-color: #111827;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left;
+    color: #d1d5db;
+    margin-bottom: 15px;
+}
+
+/* Label for best, average, worst */
+.label {
+    margin: auto;
+    font-weight: bold;
+    color: #9ca3af;
+}
+
+/* Container for displaying bars */
+.container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    background-color: #ffffff;
+    height: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Button styling */
+button {
+    padding: 12px 20px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Table styling for the comparison table */
+#comparisonTable {
+    margin-top: 40px;
+    text-align: center;
+}
+
+#comparisonTable h2 {
+    font-size: 2em;
+    color: white;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(0, 4, 255);
+    border-radius: 20px;
+    width: 700px;
+}
+
+table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #374151;
+    color: #d1d5db;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #111827;
+    color: #9ca3af;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #374151;
+    text-align: center;
+}
+
+th {
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #4b5563;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+td {
+    font-size: 1em;
+}
+
+.fast {
+    color: #4caf50;
+    font-weight: bold;
+}
+
+.slow {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .sort-box {
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+    }
+}

@@ -1,6 +1,6 @@
    
     
-const size = 50;
+const size = 55;
 let arr = [];
 
 // Initialize array with random values
@@ -117,7 +117,7 @@ function showbars(indices, sortedUpTo = 0) {
     for (let i = 0; i < size; i++) {
         const bar = document.createElement("div");
         bar.style.height = arr[i] * 100 + "%";
-        bar.style.width = "10px";
+        bar.style.width = "20px";
         bar.style.margin = "1px";
         if (indices && indices.includes(i)) {
             bar.style.backgroundColor = "red"; // Highlight currently swapped elements
